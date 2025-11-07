@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <title>Page</title>
+        <style> /* ===== CSS ===== */
+            
+            /* ===== Body ===== */
+            body{
+                background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+                min-height: 100vh;
+                overflow-x: hidden;
+            }
+
+            .Panel-Menu{
+                position: fixed;
+                top: 0px;
+                left: -25%;
+                z-index: 1000;
+                width: 25%;
+                height: 100%;
+                background-color: #ffffff;
+                box-shadow: 0px 0px 25px rgba(61, 0, 0, 0.2);
+                border: none;
+                border-radius: 10px;
+                transition: all 0.3s ease-in-out;
+            } 
+            /* ===== Button Home ===== */
+            .Btn-Home {
+                margin-top: 25%;
+                margin-left: 14.4%;
+                width: 80%;
+                height: 50px;
+                background: linear-gradient(90deg, #ffb6c1, #ffe4e1);
+                box-shadow: -4px 4px 0px #9c00277c;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease-in-out;
+            } .Btn-Home:hover {
+                background: linear-gradient(-90deg, #ffb6c1, #ffe4e1);
+                box-shadow: -4px 4px 0px #9c002793;
+                transform: scale(1.03);
+                transition: all 0.3s ease-in-out;
+            } .Btn-Home span {
+                font-size: 16px;
+                color: #d14d72;
+                margin-left: 5%;
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+            } .Btn-Home i {
+                font-size: 20px;
+                color: #d14d72;
+                margin-left: 20%;
+                margin-top: 0%;
+                transition: all 0.3s ease-in-out;
+            } .Btn-Home:hover span {
+                opacity: 1;
+                transition: all 0.3s ease-in-out;
+            } .Btn-Home:hover i {
+                margin-left: -5%;
+                margin-top: 0%;
+                transition: all 0.3s ease-in-out;
+            }
+            /* ===== Button Nosotoros ===== */
+            .Btn-Us {
+                margin-top: 10%;
+                margin-left: 14.4%;
+                width: 80%;
+                height: 50px;
+                background: linear-gradient(90deg, #ffb6c1, #ffe4e1);
+                box-shadow: -4px 4px 0px #9c00277c;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease-in-out;
+            } .Btn-Us:hover {
+                background: linear-gradient(-90deg, #ffb6c1, #ffe4e1);
+                box-shadow: -4px 4px 0px #9c002793;
+                transform: scale(1.03);
+                transition: all 0.3s ease-in-out;
+            } .Btn-Us span {
+                font-size: 16px;
+                color: #d14d72;
+                margin-left: 5%;
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+            } .Btn-Us i {
+                font-size: 20px;
+                color: #d14d72;
+                margin-left: 30%;
+                margin-top: 0%;
+                transition: all 0.3s ease-in-out;
+            } .Btn-Us:hover span {
+                opacity: 1;
+                transition: all 0.3s ease-in-out;
+            } .Btn-Us:hover i {
+                margin-left: -5%;
+                margin-top: 0%;
+                transition: all 0.3s ease-in-out;
+            }
+
+
+            /* ===== Button Menu ===== */
+              .Btn-Menu{
+                position: fixed;
+                top: 2%;
+                left: 1%;
+                width: 50px;
+                height: 50px;
+                background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+                border: none;
+                border-radius: 50%;
+                box-shadow: 0px 0px 10px rgba(156, 0, 39, 0.438);
+                cursor: pointer;
+                z-index: 1001;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease-in-out;
+            } .Btn-Menu:hover {
+                transform: scale(1.1) rotate(90deg);
+            } .Btn-Menu i {
+                font-size: 20px;
+                color: #d14d72;
+                transition: all 0.4s ease-in-out;
+            } .Btn-Menu:hover i {
+                transform: rotate(-90deg);
+            }
+
+            
+
+        </style>
+    </head>
+    <!-- ===== HTML ===== -->
+    <body>
+        <button class="Btn-Menu" id="BtnMenu"><i class="fa-solid fa-bars"></i></button>
+        <div class="Panel-Menu" id="PanelMenu">
+            <ul>
+                <button class="Btn-Home"><i class="fa-solid fa-house"></i><span>Home</span></button>
+                <button class="Btn-Us"><i class="fa-solid fa-heart"></i><span>Nosotros</span></button>
+            </ul>
+        </div>
+        <div class="Contenido">
+
+        </div>
+    </body>
+    <script>
+        const BtnMenu = document.getElementById("BtnMenu");
+        const PanelMenu = document.getElementById("PanelMenu");
+        let Abierto = false;
+
+        // FUNCIONALIDAD DEL BOTON MENU
+        BtnMenu.addEventListener("click", () => {
+            if (Abierto) {
+                PanelMenu.style.left = "-25%";
+                BtnMenu.style.left = "1%";
+                Abierto = false;
+            } else {
+                PanelMenu.style.left = "-5%";
+                BtnMenu.style.left = "20.7%";
+                Abierto = true;
+            }
+        })        
+    </script>
+</html>
