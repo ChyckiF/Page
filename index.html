@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <title>Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style> /* ===== CSS ===== */
             
             /* ===== Body ===== */
@@ -10,6 +11,8 @@
                 background: linear-gradient(135deg, #ffe6f0, #fff0f5);
                 min-height: 100vh;
                 overflow-x: hidden;
+                margin: 0;
+                padding: 0;
             }
 
             .Panel-Menu{
@@ -136,7 +139,42 @@
                 transform: rotate(-90deg);
             }
 
-            
+            /* ===== MEDIA QUERIES PARA MOBILE ===== */
+            @media (max-width: 768px) {
+                .Panel-Menu{
+                    width: 70%;
+                    left: -70%;
+                }.Btn-Home, .Btn-Us {
+                    margin-left: 10%;
+                    width: 80%;
+                    height: 55px;
+                }.Btn-Home span, .Btn-Us span {
+                    font-size: 18px;
+                }.Btn-Home i, .Btn-Us i {
+                    font-size: 24px;
+                }.Btn-Menu {
+                    width: 55px;
+                    height: 55px;
+                    top: 3%;
+                    left: 3%;
+                }.Btn-Menu i {
+                    font-size: 24px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .Panel-Menu{
+                    width: 80%;
+                    left: -80%;
+                }.Btn-Home {
+                    margin-top: 30%;
+                }.Btn-Menu {
+                    width: 60px;
+                    height: 60px;
+                    top: 4%;
+                    left: 4%;
+                }
+            }
 
         </style>
     </head>
@@ -158,17 +196,43 @@
         const PanelMenu = document.getElementById("PanelMenu");
         let Abierto = false;
 
+        // Obtener el ancho del panel dinámicamente
+        function obtenerAnchoPanel() {
+            return window.innerWidth <= 480 ? 80 : window.innerWidth <= 768 ? 70 : 25;
+        }
+
+        // Obtener posición del botón cuando está abierto
+        function obtenerPosicionBoton() {
+            const anchoPanel = obtenerAnchoPanel();
+            return (anchoPanel - 4) + "%";
+        }
+
         // FUNCIONALIDAD DEL BOTON MENU
         BtnMenu.addEventListener("click", () => {
+            const anchoPanel = obtenerAnchoPanel();
+            const posicionBoton = obtenerPosicionBoton();
+            
             if (Abierto) {
-                PanelMenu.style.left = "-25%";
-                BtnMenu.style.left = "1%";
+                PanelMenu.style.left = "-" + anchoPanel + "%";
+                BtnMenu.style.left = window.innerWidth <= 768 ? "3%" : "1%";
                 Abierto = false;
             } else {
                 PanelMenu.style.left = "-5%";
-                BtnMenu.style.left = "20.7%";
+                BtnMenu.style.left = posicionBoton;
                 Abierto = true;
             }
-        })        
+        })
+
+        // Ajustar al cambiar el tamaño de la ventana
+        window.addEventListener("resize", () => {
+            if (Abierto) {
+                const posicionBoton = obtenerPosicionBoton();
+                BtnMenu.style.left = posicionBoton;
+            } else {
+                const anchoPanel = obtenerAnchoPanel();
+                PanelMenu.style.left = "-" + anchoPanel + "%";
+                BtnMenu.style.left = window.innerWidth <= 768 ? "3%" : "1%";
+            }
+        })
     </script>
 </html>
