@@ -1,223 +1,303 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>4 Meses Juntos ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agustín ❤️ Jennifer</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-      font-family: 'Montserrat', sans-serif;
-      color: #333;
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
 
-    .container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 20px;
-      box-sizing: border-box;
-    }
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px 20px;
+    background: linear-gradient(-45deg,#ff4e8a,#ff8fb1,#ff3c78,#ff6fa5);
+    background-size:400% 400%;
+    animation: gradient 12s ease infinite;
+    overflow-y:auto;
+    color:white;
+}
 
-    h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 8.5rem;
-      margin: 0 0 5px;
-      color: white;
-      letter-spacing: 2px;
-      text-shadow: 0 0 30px rgba(255, 105, 180, 0.95);
-      animation: float 7s ease-in-out infinite;
-    }
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3.4rem;
-      margin: 0 0 25px;
-      color: white;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
+.card{
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(20px);
+    padding:40px;
+    border-radius:30px;
+    width:100%;
+    max-width:600px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.35);
+    text-align:center;
+    max-height:85vh;
+    overflow-y:auto;
+    position:relative;
+}
 
-    .heart {
-      font-size: 11rem;
-      color: #ff4757;
-      animation: beat 1.3s infinite;
-      margin: 10px 0 35px;
-      text-shadow: 0 4px 15px rgba(255, 71, 87, 0.6);
-    }
+.card::-webkit-scrollbar{
+    width:8px;
+}
+.card::-webkit-scrollbar-thumb{
+    background:white;
+    border-radius:10px;
+}
+.card::-webkit-scrollbar-track{
+    background:transparent;
+}
 
-    .dias-juntos {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.2rem;
-      color: white;
-      font-weight: 700;
-      margin: 0 0 40px 0;
-      text-shadow: 0 3px 12px rgba(0,0,0,0.4);
-      background: rgba(255, 255, 255, 0.22);
-      padding: 16px 45px;
-      border-radius: 60px;
-      backdrop-filter: blur(8px);
-    }
+h1{
+    font-size:2.2em;
+    font-weight:700;
+    margin-bottom:5px;
+}
 
-    .texto {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
-      color: white;
-      max-width: 860px;
-      line-height: 1.7;
-      background: rgba(255, 255, 255, 0.18);
-      padding: 45px;
-      border-radius: 28px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      font-weight: 600;
-      margin: 30px 0 50px;
-      min-height: 180px;
-      white-space: pre-wrap;
-      opacity: 0;
-      transition: opacity 0.6s;
-    }
+.date{
+    font-size:0.9em;
+    opacity:0.8;
+    margin-bottom:20px;
+}
 
-    .texto.visible {
-      opacity: 1;
-    }
+.counter{
+    margin:20px 0 30px 0;
+    font-size:1.1em;
+    font-weight:500;
+    background:rgba(255,255,255,0.15);
+    padding:15px;
+    border-radius:15px;
+}
 
-    .nombres {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 5rem;
-      margin: 20px 0 40px;
-      color: white;
-      letter-spacing: 3px;
-    }
+#question{
+    margin-bottom:25px;
+    font-size:1.2em;
+    font-weight:300;
+}
 
-    button {
-      padding: 16px 50px;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: white;
-      background: #ff79cd;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(255, 121, 205, 0.5);
-      transition: all 0.3s;
-      margin: 20px 0 40px;
-    }
+button{
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    font-size:1em;
+    transition:0.3s;
+}
 
-    button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(255, 121, 205, 0.7);
-    }
+#yes{
+    background:white;
+    color:#ff3c78;
+}
 
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.14); }
-    }
+#yes:hover{
+    transform:scale(1.1);
+}
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-30px); }
-    }
+#no{
+    background:transparent;
+    border:2px solid white;
+    color:white;
+    position:absolute;
+}
 
-    @media (max-width: 600px) {
-      h1 { font-size: 6.5rem; }
-      h2 { font-size: 2.8rem; }
-      .heart { font-size: 9rem; }
-      .dias-juntos { font-size: 1.9rem; padding: 14px 35px; }
-      .texto { font-size: 1.55rem; padding: 35px; }
-      .nombres { font-size: 4rem; }
-      button { font-size: 1.3rem; padding: 14px 40px; }
-    }
-  </style>
+#final{
+    display:none;
+    margin-top:20px;
+    font-size:1.3em;
+    animation: fadeIn 1s ease forwards;
+}
+
+#extraSection{
+    display:none;
+    margin-top:30px;
+}
+
+.unlock-btn{
+    background:white;
+    color:#ff3c78;
+    border-radius:20px;
+    padding:8px 18px;
+    margin:6px;
+    font-size:0.9em;
+}
+
+.unlock-btn.locked{
+    opacity:0.4;
+    pointer-events:none;
+}
+
+.phrase{
+    display:none;
+    margin-top:15px;
+    font-size:1em;
+    line-height:1.6em;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.heart{
+    position:fixed;
+    color:white;
+    animation: float 6s linear infinite;
+    opacity:0.6;
+}
+
+@keyframes float{
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-10vh);}
+}
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>4 MESES</h1>
-    <div class="heart">💙💚</div>
-    <h2>Juntos</h2>
+<div class="card">
+    <h1>Agustín ❤️ Jennifer</h1>
+    <div class="date">Nos conocimos el 04/10/2025</div>
 
-    <div class="dias-juntos" id="contador">Cargando tiempo juntos...</div>
+    <div class="counter" id="counter"></div>
 
-    <button id="mostrarBtn">Mostrar 💌</button>
+    <div id="question">Pregunta importante…<br>¿Seguimos sumando meses juntos?</div>
+    <button id="yes">Obvio que sí</button>
+    <button id="no">No</button>
 
-    <div class="texto" id="mensaje">
-Ya cuatro meses juntos… El tiempo ha pasado volando. Pasamos muchísimas cosas juntos: buenos momentos, así como malos momentos. Pero lo más importante de todo esto es que, en cada uno de esos momentos, los pasamos juntos, como un equipo.
-
-Sin duda, hay muchísimas cosas que siento por vos que, por más que lo intente, no podría expresarlas con palabras, pero aun así me gustaría intentarlo. Estos cuatro meses juntos me han hecho sentir muchas cosas y también me han enseñado muchas otras. Principalmente, me han enseñado lo que es amar, lo que es querer muchísimo a una persona, lo que es desear que a la persona que tanto amo le vaya bien en cada cosa que hace, así sea algo mínimo.
-
-Me han enseñado lo que es querer tanto a una persona que incluso daría tiempo de mi vida para que ella viva más; lo que es odiar la idea de llegar a perderla. Estos cuatro meses me han enseñado lo que es sentirse amado, lo que es despertar sabiendo que tenés a una persona que te ama y te apoya tanto.
-
-Me han mostrado lo bello que es apreciar los mínimos detalles de la vida: una sonrisa tuya, una expresión, ver en tus ojos colores tan bellos e imposibles de replicar, ver cada mínimo detalle tuyo. Me han dado la fortuna de poder estar a tu lado, de conocer cada detalle de vos, de conocerte realmente: cómo sos, cómo actuás, cómo sentís. Y cada cosa que he pasado contigo, en verdad, la valoro mucho.
-
-Gracias por tanto: por cada momento, por cada risa, por cada rato juntos, a pesar de que a veces uno u otro anda ocupado. Gracias por estar a mi lado, de verdad, gracias.
-
-Te amo muchísimo, mi gordita. Sos y serás lo que siempre necesitaré y querré. Te amo…
+    <div id="final">
+        Sabía que dirías que sí. 😌<br><br>
+        Gracias por estos meses increíbles.<br>
+        Eres mi lugar favorito.<br>
+        Te amo demasiado ❤️
     </div>
 
-    <div class="nombres">
-      [Jennifer💙] & [Agustin💚]
+    <div id="extraSection">
+        <h3>Mensajes 💌</h3>
+
+        <button class="unlock-btn">Primer Mensajito</button>
+        <button class="unlock-btn locked">Segundo Mensajito</button>
+        <button class="unlock-btn locked">Tercer Mensajito</button>
+        <button class="unlock-btn locked">Cuarto Mensajito</button>
+        <button class="unlock-btn locked">Quinto Mensajito</button>
+        <button class="unlock-btn locked">Sexto Mensajito</button>
+        <button class="unlock-btn locked">Séptimo Mensajito</button>
+        <button class="unlock-btn locked">Octavo Mensajito</button>
+
+        <div class="phrase">Te amo no solo por lo que eres, sino por lo que soy cuando estoy contigo. Eres mi mayor inspiración y mi felicidad.</div>
+        <div class="phrase">Eres mi sueño más bonito, mi realidad favorita y el motivo por el cual creo en el amor verdadero.</div>
+        <div class="phrase">No hay un solo día en el que no agradezca al destino por haberte puesto en mi camino. Eres lo mejor que me ha pasado.</div>
+        <div class="phrase">Amar es fácil cuando se trata de ti, porque tienes la capacidad de llenar mi vida de luz y esperanza.</div>
+        <div class="phrase">Eres mi pasado, mi presente y mi futuro. Mi vida sin ti no tendría color ni sentido.</div>
+        <div class="phrase">Si tuviera que elegir de nuevo, te elegiría a ti una y otra vez, porque contigo lo tengo todo.</div>
+        <div class="phrase">No importa cuánto tiempo pase, mi amor por ti sigue creciendo, como si cada día fuera la primera vez que me enamoré de ti.</div>
+        <div class="phrase">Eres la mejor decisión que he tomado en mi vida, y cada día que paso contigo confirmo que te elegiría una y mil veces más.</div>
     </div>
+</div>
 
-  </div>
+<script>
+/* CONTADOR */
+const startDate = new Date("2025-10-04T00:00:00");
+const counter = document.getElementById("counter");
 
-  <script>
-    const fechaInicio = new Date("2025-10-04T00:00:00");
+function updateCounter(){
+    const now = new Date();
+    const diff = now - startDate;
 
-    function actualizarContador() {
-      const ahora = new Date();
-      let diffMs = ahora - fechaInicio;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
 
-      const dias = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-      diffMs -= dias * (1000 * 60 * 60 * 24);
+    counter.innerHTML = `
+        💞 Llevamos juntos:<br>
+        <strong>${days}</strong> días,
+        <strong>${hours}</strong> horas,
+        <strong>${minutes}</strong> minutos,
+        <strong>${seconds}</strong> segundos
+    `;
+}
 
-      const horas = Math.floor(diffMs / (1000 * 60 * 60));
-      diffMs -= horas * (1000 * 60 * 60);
+setInterval(updateCounter,1000);
+updateCounter();
 
-      const minutos = Math.floor(diffMs / (1000 * 60));
+/* BOTÓN QUE HUYE (CORREGIDO) */
+const noBtn = document.getElementById("no");
 
-      document.getElementById("contador").innerText = 
-        `${dias} días, ${horas} horas y ${minutos} minutos juntos ❤️`;
-    }
+noBtn.addEventListener("mouseover", () => {
+    const card = document.querySelector(".card");
+    const rect = card.getBoundingClientRect();
 
-    actualizarContador();
-    setInterval(actualizarContador, 60000);
+    noBtn.style.position = "absolute";
 
-    const textoElement = document.getElementById("mensaje");
-    const textoOriginal = textoElement.innerText;
-    textoElement.innerText = "";
+    const maxX = rect.width - noBtn.offsetWidth - 20;
+    const maxY = rect.height - noBtn.offsetHeight - 20;
 
-    let i = 0;
-    let escribiendo = false;
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
 
-    function escribirTexto() {
-      if (i < textoOriginal.length) {
-        textoElement.innerText += textoOriginal.charAt(i);
-        i++;
-        setTimeout(escribirTexto, 35);
-      }
-    }
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
 
-    document.getElementById("mostrarBtn").addEventListener("click", function() {
-      if (!escribiendo) {
-        textoElement.classList.add("visible");
-        textoElement.innerText = "";
-        i = 0;
-        escribiendo = true;
-        escribirTexto();
-      }
+/* ACTIVAR CONTENIDO */
+const yesBtn = document.getElementById("yes");
+const finalMsg = document.getElementById("final");
+const question = document.getElementById("question");
+const extraSection = document.getElementById("extraSection");
+
+yesBtn.addEventListener("click", () => {
+    question.style.display = "none";
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+    finalMsg.style.display = "block";
+    extraSection.style.display = "block";
+});
+
+/* DESBLOQUEO PROGRESIVO */
+const phrases = document.querySelectorAll(".phrase");
+const unlockButtons = document.querySelectorAll(".unlock-btn");
+let current = 0;
+
+unlockButtons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        if(index === current){
+            phrases[index].style.display = "block";
+            btn.style.display = "none";
+            current++;
+            if(unlockButtons[current]){
+                unlockButtons[current].classList.remove("locked");
+            }
+        }
     });
-  </script>
+});
+
+/* CORAZONES */
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (Math.random()*20 + 12) + "px";
+    heart.style.animationDuration = (Math.random()*3 + 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(()=>{ heart.remove(); },6000);
+}
+
+setInterval(createHeart,500);
+</script>
 
 </body>
 </html>
